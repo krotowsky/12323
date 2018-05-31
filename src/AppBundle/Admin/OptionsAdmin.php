@@ -9,63 +9,39 @@
 namespace AppBundle\Admin;
 
 
+
+
+use ProductBundle\Entity\Options;
+use ProductBundle\Entity\Product;
 use Sonata\AdminBundle\Admin\AbstractAdmin;
 use Sonata\AdminBundle\Datagrid\DatagridMapper;
 use Sonata\AdminBundle\Datagrid\ListMapper;
 use Sonata\AdminBundle\Form\FormMapper;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class OptionsAdmin extends AbstractAdmin
 {
     protected function configureFormFields(FormMapper $formMapper)
     {
-        $formMapper->add('namePol');
-        $formMapper->add('brandPol');
-        $formMapper->add('width');
-        $formMapper->add('height');
-        $formMapper->add('depth');
-        $formMapper->add('weight');
-        $formMapper->add('vat');
-        $formMapper->add('ean');
-        $formMapper->add('isDigital');
-        $formMapper->add('isNew');
-        $formMapper->add('isBestseller');
-        $formMapper->add('isPreorderAllowed');
+        $formMapper->add('optionName');
+        $formMapper->add('value');
+        $formMapper->add('id',EntityType::class, [
+            'class' => Product::class,
+            'choice_label' => 'id',
+        ]);
     }
 
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
-        $datagridMapper->add('id');
-        $datagridMapper->add('namePol');
-        $datagridMapper->add('brandPol');
-        $datagridMapper->add('width');
-        $datagridMapper->add('height');
-        $datagridMapper->add('depth');
-        $datagridMapper->add('weight');
-        $datagridMapper->add('vat');
-        $datagridMapper->add('ean');
-        $datagridMapper->add('isDigital');
-        $datagridMapper->add('isNew');
-        $datagridMapper->add('isBestseller');
-        $datagridMapper->add('isPreorderAllowed');
+        $datagridMapper->add('optionName');
+        $datagridMapper->add('value');
     }
 
     protected function configureListFields(ListMapper $listMapper)
     {
-        $listMapper->add('id');
-        $listMapper->add('namePol');
-        $listMapper->add('brandPol');
-        $listMapper->add('width');
-        $listMapper->add('height');
-        $listMapper->add('depth');
-        $listMapper->add('weight');
-        $listMapper->add('vat');
-        $listMapper->add('ean');
-        $listMapper->add('isDigital');
-        $listMapper->add('isNew');
-        $listMapper->add('isBestseller');
-        $listMapper->add('isPreorderAllowed');
+        $listMapper->add('product');
+        $listMapper->add('optionName');
+        $listMapper->add('value');
     }
 
 }

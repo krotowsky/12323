@@ -2,7 +2,9 @@
 
 namespace ProductBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\ManyToOne;
 
 /**
  * Options
@@ -19,105 +21,49 @@ class Options
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="name_pol", type="string", length=255, nullable=true)
+     * @ORM\Column(name="option_name", type="string", length=255, nullable=true)
      */
-    private $namePol;
+    private $optionName;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="brand_pol", type="string", length=255, nullable=true)
+     * @ORM\Column(name="value", type="string", length=255, nullable=true)
      */
-    private $brandPol;
+    private $value;
 
     /**
      * @var int
      *
-     * @ORM\Column(name="size_id", type="integer", nullable=true)
+     * @ORM\Column(name="product_id", type="integer", nullable=true)
      */
-    private $sizeId;
+    private $productId;
 
     /**
-     * @var string
+     * Get ProductId
      *
-     * @ORM\Column(name="width", type="decimal", precision=10, scale=0, nullable=true)
+     * @return int
      */
-    private $width;
+    public function getProductId(){
+        return $this->productId;
+    }
 
     /**
-     * @var string
+     * Set ProductId
      *
-     * @ORM\Column(name="height", type="decimal", precision=10, scale=0, nullable=true)
-     */
-    private $height;
-
-    /**
-     * @var string
+     * @param string $productId
      *
-     * @ORM\Column(name="depth", type="decimal", precision=10, scale=0, nullable=true)
+     * @return string
      */
-    private $depth;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="weight", type="decimal", precision=10, scale=0, nullable=true)
-     */
-    private $weight;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="vat", type="decimal", precision=10, scale=0, nullable=true)
-     */
-    private $vat;
-
-    /**
-     * @var int
-     *
-     * @ORM\Column(name="color_id", type="integer", nullable=true)
-     */
-    private $colorId;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ean", type="string", length=255, nullable=true)
-     */
-    private $ean;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_digital", type="boolean", nullable=true)
-     */
-    private $isDigital;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_new", type="boolean", nullable=true)
-     */
-    private $isNew;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_bestseller", type="boolean", nullable=true)
-     */
-    private $isBestseller;
-
-    /**
-     * @var bool
-     *
-     * @ORM\Column(name="is_preorder_allowed", type="boolean", nullable=true)
-     */
-    private $isPreorderAllowed;
+    public function setProductId($productId){
+        $this->productId = $productId;
+        return $this;
+    }
 
 
     /**
@@ -131,339 +77,67 @@ class Options
     }
 
     /**
-     * Set namePol
+     * Set name
      *
-     * @param string $namePol
+     * @param string $optionName
      *
      * @return Options
      */
-    public function setNamePol($namePol)
+    public function setOptionName($optionName)
     {
-        $this->namePol = $namePol;
+        $this->optionName = $optionName;
 
         return $this;
     }
 
     /**
-     * Get namePol
+     * Get name
      *
      * @return string
      */
-    public function getNamePol()
+    public function getOptionName()
     {
-        return $this->namePol;
+        return $this->optionName;
     }
 
     /**
-     * Set brandPol
+     * Set value
      *
-     * @param string $brandPol
-     *
-     * @return Options
-     */
-    public function setBrandPol($brandPol)
-    {
-        $this->brandPol = $brandPol;
-
-        return $this;
-    }
-
-    /**
-     * Get brandPol
+     * @param string $value
      *
      * @return string
      */
-    public function getBrandPol()
+    public function setValue($value)
     {
-        return $this->brandPol;
-    }
-
-    /**
-     * Set sizeId
-     *
-     * @param integer $sizeId
-     *
-     * @return Options
-     */
-    public function setSizeId($sizeId)
-    {
-        $this->sizeId = $sizeId;
+        $this->value = $value;
 
         return $this;
     }
 
     /**
-     * Get sizeId
-     *
-     * @return int
-     */
-    public function getSizeId()
-    {
-        return $this->sizeId;
-    }
-
-    /**
-     * Set width
-     *
-     * @param string $width
-     *
-     * @return Options
-     */
-    public function setWidth($width)
-    {
-        $this->width = $width;
-
-        return $this;
-    }
-
-    /**
-     * Get width
+     * Get value
      *
      * @return string
      */
-    public function getWidth()
+    public function getValue()
     {
-        return $this->width;
+        return $this->value;
     }
+
 
     /**
-     * Set height
-     *
-     * @param string $height
-     *
-     * @return Options
+     * Many Option to one Product
+     * @ManyToOne(targetEntity="Product", inversedBy="product")
      */
-    public function setHeight($height)
-    {
-        $this->height = $height;
+    private $product;
 
-        return $this;
+    public function __construct() {
+        $this->features = new ArrayCollection();
     }
 
-    /**
-     * Get height
-     *
-     * @return string
-     */
-    public function getHeight()
-    {
-        return $this->height;
-    }
-
-    /**
-     * Set depth
-     *
-     * @param string $depth
-     *
-     * @return Options
-     */
-    public function setDepth($depth)
-    {
-        $this->depth = $depth;
-
-        return $this;
-    }
-
-    /**
-     * Get depth
-     *
-     * @return string
-     */
-    public function getDepth()
-    {
-        return $this->depth;
-    }
-
-    /**
-     * Set weight
-     *
-     * @param string $weight
-     *
-     * @return Options
-     */
-    public function setWeight($weight)
-    {
-        $this->weight = $weight;
-
-        return $this;
-    }
-
-    /**
-     * Get weight
-     *
-     * @return string
-     */
-    public function getWeight()
-    {
-        return $this->weight;
-    }
-
-    /**
-     * Set vat
-     *
-     * @param string $vat
-     *
-     * @return Options
-     */
-    public function setVat($vat)
-    {
-        $this->vat = $vat;
-
-        return $this;
-    }
-
-    /**
-     * Get vat
-     *
-     * @return string
-     */
-    public function getVat()
-    {
-        return $this->vat;
-    }
-
-    /**
-     * Set colorId
-     *
-     * @param integer $colorId
-     *
-     * @return Options
-     */
-    public function setColorId($colorId)
-    {
-        $this->colorId = $colorId;
-
-        return $this;
-    }
-
-    /**
-     * Get colorId
-     *
-     * @return int
-     */
-    public function getColorId()
-    {
-        return $this->colorId;
-    }
-
-    /**
-     * Set ean
-     *
-     * @param string $ean
-     *
-     * @return Options
-     */
-    public function setEan($ean)
-    {
-        $this->ean = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Get ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->ean;
-    }
-
-    /**
-     * Set isDigital
-     *
-     * @param boolean $isDigital
-     *
-     * @return Options
-     */
-    public function setIsDigital($isDigital)
-    {
-        $this->isDigital = $isDigital;
-
-        return $this;
-    }
-
-    /**
-     * Get isDigital
-     *
-     * @return bool
-     */
-    public function getIsDigital()
-    {
-        return $this->isDigital;
-    }
-
-    /**
-     * Set isNew
-     *
-     * @param boolean $isNew
-     *
-     * @return Options
-     */
-    public function setIsNew($isNew)
-    {
-        $this->isNew = $isNew;
-
-        return $this;
-    }
-
-    /**
-     * Get isNew
-     *
-     * @return bool
-     */
-    public function getIsNew()
-    {
-        return $this->isNew;
-    }
-
-    /**
-     * Set isBestseller
-     *
-     * @param boolean $isBestseller
-     *
-     * @return Options
-     */
-    public function setIsBestseller($isBestseller)
-    {
-        $this->isBestseller = $isBestseller;
-
-        return $this;
-    }
-
-    /**
-     * Get isBestseller
-     *
-     * @return bool
-     */
-    public function getIsBestseller()
-    {
-        return $this->isBestseller;
-    }
-
-    /**
-     * Set isPreorderAllowed
-     *
-     * @param boolean $isPreorderAllowed
-     *
-     * @return Options
-     */
-    public function setIsPreorderAllowed($isPreorderAllowed)
-    {
-        $this->isPreorderAllowed = $isPreorderAllowed;
-
-        return $this;
-    }
-
-    /**
-     * Get isPreorderAllowed
-     *
-     * @return bool
-     */
-    public function getIsPreorderAllowed()
-    {
-        return $this->isPreorderAllowed;
-    }
+//    public function __toString()
+//    {
+//        return $this->getOptionName();
+//    }
 }
 

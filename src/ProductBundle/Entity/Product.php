@@ -2,7 +2,11 @@
 
 namespace ProductBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use ProductBundle\Entity\Options;
+use Doctrine\ORM\Mapping\OneToMany;
+use Doctrine\ORM\Mapping\JoinColumn;
 
 /**
  * Product
@@ -59,7 +63,7 @@ class Product
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="update_at", type="datetime", nullable=true)
+     * @ORM\Column(name="updated_at", type="datetime", nullable=true)
      */
     private $updatedAt;
 
@@ -195,7 +199,7 @@ class Product
     }
 
     /**
-     * Set updateAt
+     * Set updatedAt
      *
      * @param \DateTime $updatedAt
      *
@@ -209,11 +213,11 @@ class Product
     }
 
     /**
-     * Get updateAt
+     * Get updatedAt
      *
      * @return \DateTime
      */
-    public function getUpdateAt()
+    public function getUpdatedAt()
     {
         return $this->updatedAt;
     }
@@ -233,9 +237,50 @@ class Product
 
      * @ORM\PreUpdate
      */
-    public function onPreUpdate()
+    public function onPreUpdated()
     {
         $this->updatedAt = new \DateTime("now");
+    }
+
+    /**
+     * One Product to Many Options
+     * @OneTomany(targetEntity="Options", mappedBy="product")
+     * @JoinColumn(name="product_id", referencedColumnName="id")
+     */
+    private $product;
+
+    /**
+     * Set Product
+     *
+     * @param \ProductBundle\Entity\Product $product
+     *
+     * @return Product
+     */
+    public function setProduct(\ProductBundle\Entity\Product $product = null)
+    {
+        $this->product = $product;
+
+        return $this;
+    }
+
+    /**
+     * Get product
+     *
+     * @return \ProductBundle\Entity\Product
+     */
+    public function getProduct()
+    {
+        return $this->product;
+    }
+
+    public function __construct()
+    {
+        $this->questions = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getName();
     }
 }
 

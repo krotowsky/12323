@@ -37,6 +37,24 @@ services:
             tags:
                 - { name: sonata.admin, manager_type: orm, label: Options, group: Product}
             public: true
+    admin.product:
+            class: AppBundle\Admin\ProductAdmin
+            arguments: [~, ProductBundle\Entity\Product, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Product, group: Product}
+            public: true
+    admin.supplier:
+            class: AppBundle\Admin\SupplierAdmin
+            arguments: [~, SupplierBundle\Entity\Supplier, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Suppliers, group: Supplier}
+            public: true
+    admin.contract:
+            class: AppBundle\Admin\ContractAdmin
+            arguments: [~, SupplierBundle\Entity\Contract, ~]
+            tags:
+                - { name: sonata.admin, manager_type: orm, label: Contracts, group: Supplier}
+            public: true
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

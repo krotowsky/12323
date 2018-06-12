@@ -1,3 +1,13 @@
+stock:
+    resource: "@StockBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
+feed:
+    resource: "@FeedBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 supplier:
     resource: "@SupplierBundle/Controller/"
     type:     annotation

@@ -24,6 +24,8 @@ class AppKernel extends Kernel
             new ProductBundle\ProductBundle(),
             new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
             new SupplierBundle\SupplierBundle(),
+            new FeedBundle\FeedBundle(),
+            new StockBundle\StockBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

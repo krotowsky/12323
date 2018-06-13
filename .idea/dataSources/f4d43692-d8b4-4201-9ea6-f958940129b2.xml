@@ -27,388 +27,473 @@
     <table id="21" parent="2" name="ean"/>
     <table id="22" parent="2" name="eastend"/>
     <table id="23" parent="2" name="images"/>
-    <table id="24" parent="2" name="options"/>
-    <table id="25" parent="2" name="product"/>
-    <table id="26" parent="2" name="size"/>
-    <table id="27" parent="2" name="size_type"/>
-    <table id="28" parent="2" name="stock_line"/>
-    <table id="29" parent="2" name="supplier"/>
-    <column id="30" parent="19" name="id">
+    <table id="24" parent="2" name="json_raw"/>
+    <table id="25" parent="2" name="old_eastend"/>
+    <table id="26" parent="2" name="options"/>
+    <table id="27" parent="2" name="product"/>
+    <table id="28" parent="2" name="size"/>
+    <table id="29" parent="2" name="size_type"/>
+    <table id="30" parent="2" name="stock_line"/>
+    <table id="31" parent="2" name="supplier"/>
+    <column id="32" parent="19" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="31" parent="19" name="name">
+    <column id="33" parent="19" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="32" parent="19" name="hex">
+    <column id="34" parent="19" name="hex">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <key id="33" parent="19" name="PRIMARY">
+    <key id="35" parent="19" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="34" parent="20" name="id">
+    <column id="36" parent="20" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="35" parent="20" name="code">
+    <column id="37" parent="20" name="code">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="36" parent="20" name="Type">
+    <column id="38" parent="20" name="Type">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="37" parent="20" name="margin">
+    <column id="39" parent="20" name="margin">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="38" parent="20" name="date_from">
+    <column id="40" parent="20" name="date_from">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="39" parent="20" name="date_to">
+    <column id="41" parent="20" name="date_to">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="40" parent="20" name="is_active">
+    <column id="42" parent="20" name="is_active">
       <Position>7</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="41" parent="20" name="supplier_id">
+    <column id="43" parent="20" name="supplier_id">
       <Position>8</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <index id="42" parent="20" name="IDX_E98F28592ADD6D8C">
+    <index id="44" parent="20" name="IDX_E98F28592ADD6D8C">
       <ColNames>supplier_id</ColNames>
     </index>
-    <key id="43" parent="20" name="PRIMARY">
+    <key id="45" parent="20" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="44" parent="20" name="FK_E98F28592ADD6D8C">
+    <foreign-key id="46" parent="20" name="FK_E98F28592ADD6D8C">
       <ColNames>supplier_id</ColNames>
       <RefSchemaName>erp</RefSchemaName>
       <RefTableName>supplier</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="45" parent="21" name="id">
+    <column id="47" parent="21" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="46" parent="21" name="eastend_id">
+    <column id="48" parent="21" name="eastend_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="47" parent="21" name="ean">
+    <column id="49" parent="21" name="ean">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="48" parent="21" name="size">
+    <column id="50" parent="21" name="size">
       <Position>4</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <key id="49" parent="21" name="PRIMARY">
+    <key id="51" parent="21" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="50" parent="22" name="id">
+    <column id="52" parent="22" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="51" parent="22" name="brand">
+    <column id="53" parent="22" name="name">
       <Position>2</Position>
-      <DataType>varchar(600)|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="52" parent="22" name="name">
+    <column id="54" parent="22" name="product_source_url">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="53" parent="22" name="description">
+    <column id="55" parent="22" name="product_update_url">
       <Position>4</Position>
-      <DataType>longtext|0</DataType>
-      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="54" parent="22" name="type">
+    <column id="56" parent="22" name="ftp_credentials">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="55" parent="22" name="categories">
+    <column id="57" parent="22" name="crontab">
       <Position>6</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="56" parent="22" name="netPrice">
+    <column id="58" parent="22" name="supplier_id">
       <Position>7</Position>
-      <DataType>decimal(10)|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <column id="57" parent="22" name="properties">
+    <column id="59" parent="22" name="created_at">
       <Position>8</Position>
-      <DataType>longtext|0</DataType>
-      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="58" parent="22" name="variants">
+    <column id="60" parent="22" name="active_from">
       <Position>9</Position>
-      <DataType>longtext|0</DataType>
-      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="59" parent="22" name="images">
+    <column id="61" parent="22" name="active_to">
       <Position>10</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <key id="62" parent="22" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="63" parent="23" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="64" parent="23" name="url">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="65" parent="23" name="eastend_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <key id="66" parent="23" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="67" parent="24" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="68" parent="24" name="supplier_id">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="24" name="json">
+      <Position>3</Position>
+      <Comment>(DC2Type:json_array)</Comment>
       <DataType>longtext|0</DataType>
-      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
-    </column>
-    <key id="60" parent="22" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="61" parent="23" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="62" parent="23" name="url">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="63" parent="23" name="eastend_id">
-      <Position>3</Position>
-      <DataType>int(11)|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
-    </column>
-    <key id="64" parent="23" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>id</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="65" parent="24" name="id">
-      <Position>1</Position>
-      <DataType>int(11)|0</DataType>
-      <NotNull>1</NotNull>
-      <SequenceIdentity>1</SequenceIdentity>
-    </column>
-    <column id="66" parent="24" name="value">
-      <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
-    </column>
-    <column id="67" parent="24" name="product_id">
-      <Position>3</Position>
-      <DataType>int(11)|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
-    </column>
-    <column id="68" parent="24" name="option_name">
+    <column id="70" parent="24" name="created_at">
       <Position>4</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>datetime|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <index id="69" parent="24" name="IDX_D035FA874584665A">
-      <ColNames>product_id</ColNames>
-    </index>
-    <key id="70" parent="24" name="PRIMARY">
+    <key id="71" parent="24" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="71" parent="24" name="FK_D035FA874584665A">
-      <ColNames>product_id</ColNames>
-      <RefSchemaName>erp</RefSchemaName>
-      <RefTableName>product</RefTableName>
-      <RefColNames>id</RefColNames>
-    </foreign-key>
     <column id="72" parent="25" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="73" parent="25" name="name">
+    <column id="73" parent="25" name="brand">
       <Position>2</Position>
-      <DataType>varchar(255)|0</DataType>
+      <DataType>varchar(600)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="74" parent="25" name="brand">
+    <column id="74" parent="25" name="name">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="75" parent="25" name="created_at">
+    <column id="75" parent="25" name="description">
       <Position>4</Position>
-      <DataType>datetime|0</DataType>
-      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+      <DataType>longtext|0</DataType>
+      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
     </column>
-    <column id="76" parent="25" name="ean">
+    <column id="76" parent="25" name="type">
       <Position>5</Position>
       <DataType>varchar(255)|0</DataType>
-      <NotNull>1</NotNull>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="77" parent="25" name="premiere_at">
+    <column id="77" parent="25" name="categories">
       <Position>6</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="78" parent="25" name="updated_at">
+    <column id="78" parent="25" name="netPrice">
       <Position>7</Position>
-      <DataType>datetime|0</DataType>
+      <DataType>decimal(10)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <index id="79" parent="25" name="UNIQ_D34A04AD67B1C660">
-      <ColNames>ean</ColNames>
-      <Unique>1</Unique>
-    </index>
-    <key id="80" parent="25" name="PRIMARY">
+    <column id="79" parent="25" name="properties">
+      <Position>8</Position>
+      <DataType>longtext|0</DataType>
+      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="80" parent="25" name="variants">
+      <Position>9</Position>
+      <DataType>longtext|0</DataType>
+      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+    </column>
+    <column id="81" parent="25" name="images">
+      <Position>10</Position>
+      <DataType>longtext|0</DataType>
+      <DefaultExpression>&apos;&apos;&apos;NULL&apos;&apos;&apos;</DefaultExpression>
+    </column>
+    <key id="82" parent="25" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="81" parent="25" name="UNIQ_D34A04AD67B1C660">
+    <column id="83" parent="26" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="84" parent="26" name="value">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="85" parent="26" name="product_id">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="86" parent="26" name="option_name">
+      <Position>4</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <index id="87" parent="26" name="IDX_D035FA874584665A">
+      <ColNames>product_id</ColNames>
+    </index>
+    <key id="88" parent="26" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="89" parent="26" name="FK_D035FA874584665A">
+      <ColNames>product_id</ColNames>
+      <RefSchemaName>erp</RefSchemaName>
+      <RefTableName>product</RefTableName>
+      <RefColNames>id</RefColNames>
+    </foreign-key>
+    <column id="90" parent="27" name="id">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="91" parent="27" name="name">
+      <Position>2</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="92" parent="27" name="brand">
+      <Position>3</Position>
+      <DataType>varchar(255)|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="93" parent="27" name="created_at">
+      <Position>4</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="94" parent="27" name="ean">
+      <Position>5</Position>
+      <DataType>varchar(255)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="95" parent="27" name="premiere_at">
+      <Position>6</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <column id="96" parent="27" name="updated_at">
+      <Position>7</Position>
+      <DataType>datetime|0</DataType>
+      <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
+    </column>
+    <index id="97" parent="27" name="UNIQ_D34A04AD67B1C660">
+      <ColNames>ean</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="98" parent="27" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="99" parent="27" name="UNIQ_D34A04AD67B1C660">
       <ColNames>ean</ColNames>
       <UnderlyingIndexName>UNIQ_D34A04AD67B1C660</UnderlyingIndexName>
     </key>
-    <column id="82" parent="26" name="id">
+    <column id="100" parent="28" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="83" parent="26" name="unit">
+    <column id="101" parent="28" name="unit">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="84" parent="26" name="value">
+    <column id="102" parent="28" name="value">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <key id="85" parent="26" name="PRIMARY">
+    <key id="103" parent="28" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="86" parent="27" name="id">
+    <column id="104" parent="29" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="87" parent="27" name="name">
+    <column id="105" parent="29" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <index id="88" parent="27" name="UNIQ_E77B918D5E237E06">
+    <index id="106" parent="29" name="UNIQ_E77B918D5E237E06">
       <ColNames>name</ColNames>
       <Unique>1</Unique>
     </index>
-    <key id="89" parent="27" name="PRIMARY">
+    <key id="107" parent="29" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="90" parent="27" name="UNIQ_E77B918D5E237E06">
+    <key id="108" parent="29" name="UNIQ_E77B918D5E237E06">
       <ColNames>name</ColNames>
       <UnderlyingIndexName>UNIQ_E77B918D5E237E06</UnderlyingIndexName>
     </key>
-    <column id="91" parent="28" name="id">
+    <column id="109" parent="30" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="92" parent="28" name="product_id">
+    <column id="110" parent="30" name="product_id">
       <Position>2</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="93" parent="28" name="order_header_id">
+    <column id="111" parent="30" name="order_header_id">
       <Position>3</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="94" parent="28" name="order_line_id">
+    <column id="112" parent="30" name="order_line_id">
       <Position>4</Position>
       <DataType>int(11)|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="95" parent="28" name="reserved_at">
+    <column id="113" parent="30" name="reserved_at">
       <Position>5</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="96" parent="28" name="created_at">
+    <column id="114" parent="30" name="created_at">
       <Position>6</Position>
       <DataType>datetime|0</DataType>
       <DefaultExpression>&apos;NULL&apos;</DefaultExpression>
     </column>
-    <column id="97" parent="28" name="supplier_contract_id">
+    <column id="115" parent="30" name="supplier_contract_id">
       <Position>7</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="98" parent="28" name="price">
+    <column id="116" parent="30" name="price">
       <Position>8</Position>
       <DataType>decimal(10)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="99" parent="28" name="is_reserved">
+    <column id="117" parent="30" name="is_reserved">
       <Position>9</Position>
       <DataType>tinyint(1)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="100" parent="28" name="PRIMARY">
+    <key id="118" parent="30" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="101" parent="29" name="id">
+    <column id="119" parent="31" name="id">
       <Position>1</Position>
       <DataType>int(11)|0</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
     </column>
-    <column id="102" parent="29" name="name">
+    <column id="120" parent="31" name="name">
       <Position>2</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="103" parent="29" name="code">
+    <column id="121" parent="31" name="code">
       <Position>3</Position>
       <DataType>varchar(255)|0</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="104" parent="29" name="PRIMARY">
+    <key id="122" parent="31" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

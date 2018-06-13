@@ -5,9 +5,9 @@ namespace FeedBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Eastend
+ * Old_Eastend
  *
- * @ORM\Table(name="eastend")
+ * @ORM\Table(name="old_eastend")
  * @ORM\Entity(repositoryClass="FeedBundle\Repository\EastendRepository")
  */
 class Eastend
@@ -38,7 +38,7 @@ class Eastend
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=255, nullable=true)
+     * @ORM\Column(name="description", type="text", nullable=true)
      */
     private $description;
 
@@ -66,21 +66,21 @@ class Eastend
     /**
      * @var string
      *
-     * @ORM\Column(name="properties", type="string", length=255, nullable=true)
+     * @ORM\Column(name="properties", type="text", nullable=true)
      */
     private $properties;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="variants", type="string", length=255, nullable=true)
+     * @ORM\Column(name="variants", type="text", nullable=true)
      */
     private $variants;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="images", type="string", length=255, nullable=true)
+     * @ORM\Column(name="images", type="text", nullable=true)
      */
     private $images;
 

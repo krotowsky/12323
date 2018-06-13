@@ -55,6 +55,10 @@ services:
             tags:
                 - { name: sonata.admin, manager_type: orm, label: Contracts, group: Supplier}
             public: true
+    supplier.command.source_import:
+            class: SupplierBundle\Command\SourceImportCommand
+            tags:
+                - { name: console.command , command: supplier:import-feed}
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
@@ -83,3 +87,9 @@ services:
     FeedBundle\Service\:
         resource: '../../src/FeedBundle/Service/'
         public: true
+    SupplierBundle\Service\:
+            resource: '../../src/SupplierBundle/Service/'
+            arguments: ["@service_container"]
+            public: true
+            calls:
+                - [setContainer, ["@service_container"]]

@@ -26,32 +26,11 @@ class Product
     private $id;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=true)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="brand", type="string", length=255, nullable=true)
-     */
-    private $brand;
-
-    /**
      * @var \DateTime
      *
      * @ORM\Column(name="created_at", type="datetime", nullable=true)
      */
     private $createdAt;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="ean", type="string", length=255, unique=true)
-     */
-    private $ean;
 
     /**
      * @var \DateTime
@@ -79,54 +58,6 @@ class Product
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Product
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set brand
-     *
-     * @param string $brand
-     *
-     * @return Product
-     */
-    public function setBrand($brand)
-    {
-        $this->brand = $brand;
-
-        return $this;
-    }
-
-    /**
-     * Get brand
-     *
-     * @return string
-     */
-    public function getBrand()
-    {
-        return $this->brand;
-    }
-
-    /**
      * Set createdAt
      *
      * @param \DateTime $createdAt
@@ -150,29 +81,6 @@ class Product
         return $this->createdAt;
     }
 
-    /**
-     * Set ean
-     *
-     * @param string $ean
-     *
-     * @return Product
-     */
-    public function setEan($ean)
-    {
-        $this->ean = $ean;
-
-        return $this;
-    }
-
-    /**
-     * Get ean
-     *
-     * @return string
-     */
-    public function getEan()
-    {
-        return $this->ean;
-    }
 
     /**
      * Set premiereAt

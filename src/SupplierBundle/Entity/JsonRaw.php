@@ -42,6 +42,13 @@ class JsonRaw
      */
     private $createdAt;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="is_processed", type="integer")
+     */
+    private $isProcessed;
+
 
     /**
      * Get id
@@ -123,6 +130,30 @@ class JsonRaw
     public function getCreatedAt()
     {
         return $this->createdAt;
+    }
+
+    /**
+     * Set IsProcessed
+     *
+     * @param integer $idProcessed
+     *
+     * @return JsonRaw
+     */
+    public function setIsPrcessed($idProcessed)
+    {
+        $this->isProcessed = $idProcessed;
+
+        return $this;
+    }
+
+    /**
+     * Get IsProcessed
+     *
+     * @return int
+     */
+    public function getIsPrcessed()
+    {
+        return $this->isProcessed;
     }
 }
 

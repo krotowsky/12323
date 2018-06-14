@@ -560,7 +560,7 @@
       <workItem from="1528871471761" duration="2234000" />
       <workItem from="1528888133210" duration="11998000" />
       <workItem from="1528912322039" duration="4971000" />
-      <workItem from="1528965216400" duration="5852000" />
+      <workItem from="1528965216400" duration="5870000" />
     </task>
     <task id="LOCAL-00001" summary="sonata - product">
       <created>1527419714480</created>
@@ -583,11 +583,18 @@
       <option name="project" value="LOCAL" />
       <updated>1528904458681</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="eastend">
+      <created>1528981087613</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1528981087613</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102605000" />
+    <option name="totallyTimeSpent" value="102623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="3836" y="0" width="1928" height="1084" extended-state="6" />
@@ -1001,6 +1008,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
           <caret line="62" column="64" lean-forward="false" selection-start-line="62" selection-start-column="64" selection-end-line="62" selection-end-column="64" />
+          <folding />
         </state>
       </provider>
     </entry>

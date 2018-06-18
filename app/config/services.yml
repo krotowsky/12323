@@ -63,6 +63,10 @@ services:
                 class: SupplierBundle\Command\DiscoverAttributesCommand
                 tags:
                     - { name: console.command , command: supplier:discover-attributes}
+    supplier.command.create_product:
+                class: SupplierBundle\Command\CreateProductCommand
+                tags:
+                    - { name: console.command , command: supplier:create-product}
 
     # makes classes in src/AppBundle available to be used as services
     # this creates a service per class whose id is the fully-qualified class name

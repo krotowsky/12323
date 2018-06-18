@@ -45,5 +45,23 @@
         <use-password>true</use-password>
       </ssh-properties>
     </data-source>
+    <data-source name="wordpress@77.55.223.85" uuid="421f6d04-1c8c-4310-8304-8a25a5d9f500">
+      <database-info product="MySQL" version="5.5.5-10.3.7-MariaDB-1:10.3.7+maria~xenial-log" jdbc-version="4.0" driver-name="MySQL Connector Java" driver-version="mysql-connector-java-5.1.45 ( Revision: 9131eefa398531c7dc98776e8a3fe839e544c5b2 )">
+        <extra-name-characters>#@</extra-name-characters>
+        <identifier-quote-string>`</identifier-quote-string>
+      </database-info>
+      <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact" />
+      <secret-storage>master_key</secret-storage>
+      <user-name>root</user-name>
+      <introspection-schemas>*</introspection-schemas>
+      <ssh-properties>
+        <enabled>true</enabled>
+        <proxy-host>77.55.223.85</proxy-host>
+        <proxy-port>22</proxy-port>
+        <secret-storage>master_key</secret-storage>
+        <user>pkrotowski</user>
+        <use-password>true</use-password>
+      </ssh-properties>
+    </data-source>
   </component>
 </project>

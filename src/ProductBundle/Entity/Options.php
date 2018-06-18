@@ -125,19 +125,5 @@ class Options
     }
 
 
-    /**
-     * Many Option to one Product
-     * @ManyToOne(targetEntity="Product", inversedBy="product")
-     */
-    private $product;
-
-    public function __construct() {
-        $this->features = new ArrayCollection();
-    }
-
-//    public function __toString()
-//    {
-//        return $this->getOptionName();
-//    }
 }
 

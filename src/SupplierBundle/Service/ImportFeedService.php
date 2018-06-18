@@ -52,7 +52,7 @@ class ImportFeedService extends Controller
 
         $entityManager = $this->getDoctrine()->getManager();
         $start = new \DateTime('now');
-        print 'Processing...';
+        print 'Processing...' . PHP_EOL;
 
         print 'Start: ' . $start->format('H:i:s') . PHP_EOL;
         foreach ($json as $key => $value) {
@@ -60,6 +60,7 @@ class ImportFeedService extends Controller
             $json_raw->setJson($value);
             $json_raw->setCreatedAt(new \DateTime('now'));
             $json_raw->setSupplierId($supplierId);
+            $json_raw->setIsPrcessed(0);
             $entityManager->persist($json_raw);
             $entityManager->flush();
         }
